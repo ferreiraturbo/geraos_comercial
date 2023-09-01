@@ -6,7 +6,7 @@
 // @author       You
 // @match        https://erp.turbonettelecom.com.br/dashboard_seller
 // @downloadURL  https://github.com/ferreiraturbo/geraos_comercial/raw/main/geraos_comercial.user.js
-// @updateURL    https://github.com/ferreiraturbo/geraos_comercial/raw/main/geraos_comercial.user.js
+// @updateURL    https://raw.githubusercontent.com/ferreiraturbo/geraos/master/geraos.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=turbonettelecom.com.br
 // @grant        none
 // ==/UserScript==
@@ -595,50 +595,50 @@ label {
         tipocontrato.appendChild(separadorcontrato)
         tipocontrato.innerHTML+="<br>"
 
-        const carne = document.createElement("div");
-        carne.setAttribute("role", "tabpanel");
-        carne.id= "carne";
-        carne.className= "tabpanel hidden";
-        tabList.appendChild(carne);
+        const contratofinanceiro = document.createElement("div");
+        contratofinanceiro.setAttribute("role", "tabpanel");
+        contratofinanceiro.id= "contratofinanceiro";
+        contratofinanceiro.className= "tabpanel hidden";
+        tabList.appendChild(contratofinanceiro);
 
-        const h3carne= document.createElement("h2");
-        h3carne.textContent= "Qual tipo do carnê?";
-        carne.appendChild(h3carne);
+        const h3contratofinanceiro= document.createElement("h2");
+        h3contratofinanceiro.textContent= "Qual tipo de contrato financeiro?";
+        contratofinanceiro.appendChild(h3contratofinanceiro);
 
-        const separadorcarne= document.createElement("div");
-        separadorcarne.className= "separadorcarne";
+        const separadorcontratofinanceiro= document.createElement("div");
+        separadorcontratofinanceiro.className= "separadorcontratofinanceiro";
 
-        const linhafisico= document.createElement("div")
-        linhafisico.className = "fisicoline"
+        const linhacarne= document.createElement("div")
+        linhacarne.className = "carnepadrao"
         const inputSmart= document.createElement("input");
         inputSmart.type= "radio";
-        inputSmart.value="FISICO"
-        inputSmart.name="carne"
+        inputSmart.value="CARNÊ PADRÃO"
+        inputSmart.name="contratofinanceiro"
         inputSmart.className="form-input"
-        linhafisico.appendChild(inputSmart);
+        linhacarne.appendChild(inputSmart);
 
-        const labelFisico=document.createElement('label')
-        labelFisico.htmlFor="FISICO"
-        labelFisico.textContent="FISICO"
-        linhafisico.appendChild(labelFisico)
-        separadorcarne.appendChild(linhafisico)
+        const labelCarne=document.createElement('label')
+        labelCarne.htmlFor="CARNÊ PADRÃO"
+        labelCarne.textContent="CARNE PADRÃO"
+        linhacarne.appendChild(labelCarne)
+        separadorcontratofinanceiro.appendChild(linhacarne)
 
-        const linhadigital= document.createElement("div")
-        linhadigital.className = "digitalline"
-        const inputDigital=document.createElement('input')
-        inputDigital.type="radio"
-        inputDigital.value="DIGITAL"
-        inputDigital.name="carne"
-        inputDigital.className="form-input"
-        linhadigital.appendChild(inputDigital)
+        const linhamensal= document.createElement("div")
+        linhamensal.className = "mensalline"
+        const inputmensal=document.createElement('input')
+        inputmensal.type="radio"
+        inputmensal.value="Mensal - Emitir Nota Fiscal"
+        inputmensal.name="contratofinanceiro"
+        inputmensal.className="form-input"
+        linhamensal.appendChild(inputmensal)
 
-        const labelDigital=document.createElement('label')
-        labelDigital.htmlFor="digital"
-        labelDigital.textContent="DIGITAL"
-        linhadigital.appendChild(labelDigital)
-        separadorcarne.appendChild(linhadigital)
-        carne.appendChild(separadorcarne)
-        carne.innerHTML+="<br>"
+        const labelmensal=document.createElement('label')
+        labelmensal.htmlFor="mensal"
+        labelmensal.textContent="Mensal - Emitir Nota Fiscal"
+        linhamensal.appendChild(labelmensal)
+        separadorcontratofinanceiro.appendChild(linhamensal)
+        contratofinanceiro.appendChild(separadorcontratofinanceiro)
+        contratofinanceiro.innerHTML+="<br>"
 
         const createRadiovencimento = (value, text) => {
                 const container = document.createElement("div");
@@ -1087,7 +1087,7 @@ label {
             const valor = document.querySelector("#valor > input").value || "";
             const formaPagamento = document.querySelector("#formapagamento > input").value || "";
             const tipoContrato = document.querySelector('input[name="tipodecontrato"]:checked').value || "";
-            const carne = document.querySelector('input[name="carne"]:checked').value || "";
+            const contratoFinanceiro = document.querySelector('input[name="contratofinanceiro"]:checked').value || "";
             const vencimento = document.querySelector('input[name="vencimento"]:checked').value || "";
             const dataInput = document.querySelector('#dataInput > input').value;
             const dia = dataInput ? dataInput.split('-').reverse().join('/') : "";
@@ -1114,8 +1114,8 @@ ${formaPagamento}
 TIPO DE CONTRATO:
 ${tipoContrato}
 
-CARNÊ:
-${carne}
+TIPO CONTRATO FINANCEIRO:
+${contratoFinanceiro}
 
 VENCIMENTO:
 ${vencimento}
