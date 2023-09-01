@@ -619,7 +619,7 @@ label {
 
         const labelCarne=document.createElement('label')
         labelCarne.htmlFor="CARNÊ PADRÃO"
-        labelCarne.textContent="CARNE PADRÃO"
+        labelCarne.textContent="Carnê Padrão"
         linhacarne.appendChild(labelCarne)
         separadorcontratofinanceiro.appendChild(linhacarne)
 
