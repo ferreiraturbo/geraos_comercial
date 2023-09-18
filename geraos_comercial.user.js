@@ -6,7 +6,7 @@
 // @author       You
 // @match        https://erp.turbonettelecom.com.br/dashboard_seller
 // @downloadURL  https://github.com/ferreiraturbo/geraos_comercial/raw/main/geraos_comercial.user.js
-// @updateURL    https://raw.githubusercontent.com/ferreiraturbo/geraos/master/geraos.user.js
+// @updateURL    https://github.com/ferreiraturbo/geraos_comercial/raw/main/geraos_comercial.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=turbonettelecom.com.br
 // @grant        none
 // ==/UserScript==
